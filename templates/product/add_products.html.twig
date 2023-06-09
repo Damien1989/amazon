@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Nouveau Produit{% endblock %}
+
+{% block body %}
+    <h1>Ajouter un produit</h1>
+    <ul>
+        {% for product in products %}
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.title }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <p> {{ product.price }}</p>
+                    <a href="#" class="btn btn-primary"></a>
+                </div>
+            </div>
+        {% else %}
+            <li>Aucun produit n’a été trouvé.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

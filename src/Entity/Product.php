@@ -32,6 +32,9 @@ class Product
     #[ORM\Column(type: Types::TEXT)]
     private ?string $reservation_text = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $picture = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +108,18 @@ class Product
     public function setReservationText(string $reservation_text): static
     {
         $this->reservation_text = $reservation_text;
+
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(?string $picture): static
+    {
+        $this->picture = $picture;
 
         return $this;
     }
